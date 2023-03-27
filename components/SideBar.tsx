@@ -1,5 +1,5 @@
 'use client'
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import NewChat from "./NewChat";
 
 function Sidebar() {
@@ -15,7 +15,9 @@ function Sidebar() {
         {/* Map through the ChatRows */}
         </div>
       </div>
-      {session && <img src={session.user?.image!} alt="" 
+      {session && <img
+      onClick={() => signOut()}
+      src={session.user?.image!} alt="" 
       className="h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50" />}
     </div>
   );
