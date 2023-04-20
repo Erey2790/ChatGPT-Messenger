@@ -38,6 +38,7 @@ function ChatInput({ chatId }: Props) {
         )
 
         // Toast notification to say loading!
+        
 
         await fetch('/api/askQuestion', {
             method: 'POST', 
