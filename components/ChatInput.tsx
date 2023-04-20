@@ -37,7 +37,7 @@ function ChatInput({ chatId }: Props) {
             message
         )
 
-        // Toast notification
+        // Toast notification to say loading!
 
         await fetch('/api/askQuestion', {
             method: 'POST', 
@@ -47,6 +47,8 @@ function ChatInput({ chatId }: Props) {
             body: JSON.stringify({
                 prompt: input, chatId, model, session
             })
+        }).then (() => {
+            // Toast noti success
         })
     }
 
