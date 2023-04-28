@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { FormEvent, useState } from "react";
 import { toast } from "react-hot-toast";
 import { db } from "../firebase";
+import ModelSelection from "./ModelSelection";
 
 type Props = {
     chatId: string;
@@ -76,8 +77,8 @@ function ChatInput({ chatId }: Props) {
             </button>
         </form>
 
-        <div>
-            {/* modelselection*/}
+        <div className="md:hidden">
+            <ModelSelection />
         </div>
     </div>
   )
