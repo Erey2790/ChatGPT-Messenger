@@ -5,6 +5,7 @@ import { useCollection } from 'react-firebase-hooks/firestore'
 import { db } from "../firebase";
 import ChatRow from "./ChatRow";
 import NewChat from "./NewChat";
+import ModelSelection from "./ModelSelection";
 
 
 function Sidebar() {
@@ -21,8 +22,8 @@ function Sidebar() {
       <div className="flex-1">
         <div>{/* NewChat */}
         <NewChat />
-        <div>
-            {/* ModelSelection */}
+        <div className="hidden sm:inline">
+            <ModelSelection />
         </div>
         {/* Map through the ChatRows */}
         {chats?.docs.map(chat => (
